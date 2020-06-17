@@ -1,7 +1,7 @@
 <!DOCTYPE Linker_Placement_File>
 <Root name="Flash Section Placement">
-  <MemorySegment name="$(FLASH_NAME:FLASH);FLASH1">
-    <ProgramSection alignment="0x100" load="Yes" name=".vectors" start="$(FLASH_START:)" />
+  <MemorySegment name="FLASH">
+    <ProgramSection alignment="0x100" load="Yes" name=".vectors" />
     <ProgramSection alignment="4" load="Yes" name=".init" />
     <ProgramSection alignment="4" load="Yes" name=".init_rodata" />
     <ProgramSection alignment="4" load="Yes" name=".text" />
@@ -14,8 +14,8 @@
     <ProgramSection alignment="4" load="Yes" runin=".tdata_run" name=".tdata" />
     <ProgramSection alignment="4" load="Yes" name=".shared" />
   </MemorySegment>
-  <MemorySegment name="$(RAM_NAME:RAM);SRAM;RAM1">
-    <ProgramSection alignment="0x100" load="No" name=".vectors_ram" start="$(RAM_START:$(SRAM_START:))" />
+  <MemorySegment name="RAM">
+    <ProgramSection alignment="0x100" load="No" name=".vectors_ram"/>
     <ProgramSection alignment="4" load="No" name=".fast_run" />
     <ProgramSection alignment="4" load="No" name=".data_run" />
     <ProgramSection alignment="4" load="No" name=".bss" />
@@ -25,14 +25,5 @@
     <ProgramSection alignment="4" size="__HEAPSIZE__" load="No" name=".heap" />
     <ProgramSection alignment="8" size="__STACKSIZE__" load="No" name=".stack" />
     <ProgramSection alignment="8" size="__STACKSIZE_PROCESS__" load="No" name=".stack_process" />
-  </MemorySegment>
-  <MemorySegment name="$(FLASH2_NAME:FLASH2)">
-    <ProgramSection alignment="4" load="Yes" name=".text2" />
-    <ProgramSection alignment="4" load="Yes" name=".rodata2" />
-    <ProgramSection alignment="4" load="Yes" runin=".data2_run" name=".data2" />
-  </MemorySegment>
-  <MemorySegment name="$(RAM2_NAME:RAM2)">
-    <ProgramSection alignment="4" load="No" name=".data2_run" />
-    <ProgramSection alignment="4" load="No" name=".bss2" />
   </MemorySegment>
 </Root>

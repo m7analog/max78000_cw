@@ -1,4 +1,6 @@
-*.svd
 GCC/
 *.hzs
 heap.c
+*Debug/
+*Release/
+*.map
